@@ -41,7 +41,6 @@ body {
 .text-brand-blue { color: var(--brand-blue); }
 .text-brand-red { color: var(--brand-red); }
 
-/* Mobile optimizations */
 @media (max-width: 640px) {
   .btn-primary, .btn-secondary {
     @apply px-3 py-2 text-sm;
