@@ -1,5 +1,5 @@
 const config = {
-  siteUrl: 'https://sfpcc.com',
+  siteUrl: 'https://sgpcc.in',
   company: {
     name: 'Shree Ganesh Plywood & Construction Chemicals',
     shortName: 'SGPCC',
@@ -56,7 +56,7 @@ const config = {
     { label: 'Contact', href: '#contact' },
   ],
   seo: {
-    title: 'SFPCC — Shree Ganesh Plywood & Construction Chemicals',
+    title: 'SGPCC — Shree Ganesh Plywood & Construction Chemicals',
     description: 'Authorised UltraTech dealer. Supplier of cement, steel, AAC blocks, shuttering plywood, pinewood, epoxy & industrial flooring in Bhiwadi/Alwar, Rajasthan.'
   }
 }
