@@ -18,7 +18,7 @@ export default function Partners() {
               key={p.name} 
               href={p.url || '#'} 
               target={p.url ? '_blank' : undefined} 
-              className="card p-3 sm:p-4 lg:p-6 flex items-center justify-center hover:shadow-lg transition-all duration-300 group min-h-[80px] sm:min-h-[100px]"
+              className="card p-3 sm:p-4 lg:p-2 flex items-center justify-center hover:shadow-lg transition-all duration-300 group min-h-[80px] sm:min-h-[100px]"
             >
               {p.logo ? (
                 <Image 

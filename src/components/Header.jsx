@@ -37,9 +37,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200" style={{height: 'var(--header-h)'}}>
       <div className="container-responsive h-full flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-brand-yellow to-yellow-500 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-            <Image src={config.company.logo} alt={config.company.shortName} width={24} height={24} className="rounded sm:w-8 sm:h-8" />
-          </div>
+          {/* <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-brand-yellow to-yellow-500 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow"> */}
+            <Image src={config.company.logo} alt={config.company.shortName} width={40} height={30} />
+          {/* </div> */}
           <div className="font-bold leading-tight">
             <div className="text-gray-900 group-hover:text-brand-blue transition-colors text-sm sm:text-base">{config.company.shortName}</div>
             <div className="text-xs font-medium text-gray-600 hidden sm:block">Building Products Division</div>
