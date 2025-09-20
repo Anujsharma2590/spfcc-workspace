@@ -24,7 +24,7 @@ const config = {
     { name: 'Pidilite', logo: '/partners/pidilite.png' },
     { name: 'MYK Laticrete', logo: '/partners/myk-laticrete.png' },
     { name: 'Supreme', logo: '/partners/supreme.png' },
-    { name: 'Sika', logo: '/partners/sika.png' },
+    { name: 'Sika', logo: '/partners/sika.png', url: "https://www.sika.com/" },
     { name: 'Birla White', logo: '/partners/birla-white.png' },
     { name: 'STP Limited', logo: '/partners/stp.png' },
     { name: 'Kryton', logo: '/partners/kryton.png' },
