@@ -61,3 +61,27 @@ const config = {
 }
 
 export default config;
+
+
+
+
+// Add Images:
+// /public/og-image.jpg (1200x630px)
+// /public/logo.png
+// /public/icon-192.png and /public/icon-512.png
+// /public/mstile-150x150.png
+
+// Update Verification Codes:
+// Replace placeholder verification codes in layout.js
+// Add Google Search Console verification
+// Add Bing Webmaster Tools verification
+
+// Create Social Media Profiles:
+// Facebook page
+// LinkedIn company page
+// Instagram business account
+
+// Submit to Search Engines:
+// Google Search Console
+// Bing Webmaster Tools
+// Submit sitemap

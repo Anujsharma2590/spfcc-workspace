@@ -1,0 +1,27 @@
+{
+  "name": "Shree Ganesh Plywood & Construction Chemicals",
+  "short_name": "SFPCC",
+  "description": "Authorised UltraTech dealer. Supplier of cement, steel, AAC blocks, shuttering plywood, pinewood, epoxy & industrial flooring in Bhiwadi/Alwar, Rajasthan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f6c100",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "construction", "shopping"],
+  "lang": "en",
+  "dir": "ltr"
+}

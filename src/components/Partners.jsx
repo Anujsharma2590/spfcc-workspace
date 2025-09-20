@@ -3,21 +3,46 @@ import config from '@/content/site.config'
 
 export default function Partners() {
   return (
-    <section id="partners" className="py-16">
+    <section id="partners" className="py-16 bg-white">
       <div className="container-responsive">
-        <h2 className="text-3xl font-bold">Trusted Partners</h2>
-        <p className="text-gray-600 mt-2">We work with leading brands to ensure quality and reliability.</p>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Trusted Partners</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We maintain a network of distributors and partners with leading organizations to ensure quality and reliability
+          </p>
+        </div>
 
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center">
           {config.partners.map((p) => (
-            <a key={p.name} href={p.url || '#'} target={p.url ? '_blank' : undefined} className="card p-4 flex items-center justify-center">
+            <a 
+              key={p.name} 
+              href={p.url || '#'} 
+              target={p.url ? '_blank' : undefined} 
+              className="card p-6 flex items-center justify-center hover:shadow-lg transition-all duration-300 group"
+            >
               {p.logo ? (
-                <Image src={p.logo} alt={p.name} width={120} height={60} className="object-contain" />
+                <Image 
+                  src={p.logo} 
+                  alt={p.name} 
+                  width={120} 
+                  height={60} 
+                  className="object-contain group-hover:scale-105 transition-transform duration-300" 
+                />
               ) : (
-                <span className="text-sm text-center font-medium">{p.name}</span>
+                <div className="text-center">
+                  <div className="text-2xl mb-2">🏢</div>
+                  <span className="text-sm font-medium text-gray-700">{p.name}</span>
+                </div>
               )}
             </a>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-2 bg-brand-yellow px-6 py-3 rounded-full text-gray-900 font-semibold">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            Authorized Dealer Network
+          </div>
         </div>
       </div>
     </section>
