@@ -4,6 +4,7 @@ export default function Contact() {
   const tel = config.contacts.phones?.[0]?.number?.replace(/\s+/g, '') || ''
   const wa = config.contacts.whatsapp?.replace(/\s+/g, '') || ''
   const waLink = `https://wa.me/${wa.replace('+','')}`
+  
   return (
     <section id="contact" className="py-12 sm:py-16 bg-gradient-to-br from-yellow-50 to-orange-50">
       <div className="container-responsive">

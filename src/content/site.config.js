@@ -2,7 +2,7 @@ const config = {
   siteUrl: 'https://sfpcc.com',
   company: {
     name: 'Shree Ganesh Plywood & Construction Chemicals',
-    shortName: 'SFPCC',
+    shortName: 'SGPCC',
     tagline: 'One stop solution for cement, steel, chemicals, AAC blocks, shuttering plywood, pinewood, epoxy & industrial flooring.',
     about:
       'We maintain a network of distributors and partners across India to deliver premium building materials at wholesale rates with reliable service.',
@@ -42,7 +42,8 @@ const config = {
     { title: 'Construction Chemicals', description: 'Admixtures, waterproofing, repair mortars, grouts & sealants.' },
     { title: 'AAC Blocks' },
     { title: 'Shuttering Plywood & Pinewood' },
-    { title: 'Epoxy, PU & Industrial Flooring' }
+    { title: 'Epoxy, PU & Industrial Flooring' },
+    { title: 'Insulation' , description: 'Insulation materials for thermal and acoustic protection.' }
   ],
   cta: {
     heading: 'Looking for bulk pricing or urgent delivery?',

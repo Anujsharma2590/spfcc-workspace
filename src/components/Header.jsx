@@ -6,6 +6,33 @@ import { useState } from 'react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+
+  const handleNavClick = (href, e) => {
+    e.preventDefault()
+    
+    setOpen(false)
+    
+    if (href === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+    
+    if (href.startsWith('#')) {
+      const targetId = href.substring(1)
+      const targetElement = document.getElementById(targetId)
+      
+      if (targetElement) {
+        const headerHeight = 72 
+        const targetPosition = targetElement.offsetTop - headerHeight - 20 
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200" style={{height: 'var(--header-h)'}}>
       <div className="container-responsive h-full flex items-center justify-between">
@@ -24,13 +51,18 @@ export default function Header() {
             <a 
               key={i.href} 
               href={i.href} 
-              className="text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors relative group"
+              onClick={(e) => handleNavClick(i.href, e)}
+              className="text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors relative group cursor-pointer"
             >
               {i.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-yellow group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
-          <a href="#contact" className="btn-primary shadow-md hover:shadow-lg transition-shadow">
+          <a 
+            href="#contact" 
+            onClick={(e) => handleNavClick('#contact', e)}
+            className="btn-primary shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+          >
             <span>📞</span>
             Get Quote
           </a>
@@ -56,16 +88,16 @@ export default function Header() {
               <a 
                 key={i.href} 
                 href={i.href} 
-                className="py-2 text-base font-medium text-gray-700 hover:text-brand-blue transition-colors border-b border-gray-100 last:border-b-0" 
-                onClick={()=>setOpen(false)}
+                onClick={(e) => handleNavClick(i.href, e)}
+                className="py-2 text-base font-medium text-gray-700 hover:text-brand-blue transition-colors border-b border-gray-100 last:border-b-0 cursor-pointer" 
               >
                 {i.label}
               </a>
             ))}
             <a 
               href="#contact" 
-              className="btn-primary w-fit mt-2 shadow-md" 
-              onClick={()=>setOpen(false)}
+              onClick={(e) => handleNavClick('#contact', e)}
+              className="btn-primary w-fit mt-2 shadow-md cursor-pointer" 
             >
               <span>📞</span>
               Get Quote
