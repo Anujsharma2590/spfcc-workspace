@@ -23,7 +23,7 @@ const config = {
     { name: 'UltraTech Cement', logo: '/partners/ultratech.png', url: 'https://www.ultratechcement.com/' },
     { name: 'Pidilite', logo: '/partners/pidilite.png' },
     { name: 'MYK Laticrete', logo: '/partners/myk-laticrete.png' },
-    { name: 'Supreme', logo: '/partners/supreme.png' },
+    { name: 'Supreme', logo: '/partners/supreme.png', url: "https://www.supreme.co.in/" },
     { name: 'Sika', logo: '/partners/sika.png', url: "https://www.sika.com/" },
     { name: 'Birla White', logo: '/partners/birla-white.png' },
     { name: 'STP Limited', logo: '/partners/stp.png' },
