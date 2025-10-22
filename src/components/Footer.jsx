@@ -56,7 +56,7 @@ export default function Footer() {
                   href="tel:+919610961111"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +91 9610961111
+                  +91 9610961111, +91 9610962222, +91 9610967777
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -65,6 +65,12 @@ export default function Footer() {
                   Bhiwadi, Alwar, Rajasthan
                 </span>
               </div>
+              <div className="flex items-center gap-3">
+              <span className="text-brand-yellow">🧾</span>
+              <span className="text-gray-300 text-sm">
+                <strong>GST No: 08ADAFS2300N1Z6</strong>
+              </span>
+    </div>
             </div>
           </div>
         </div>
