@@ -1,23 +1,52 @@
+'use client'
+
 import Image from 'next/image'
 import config from '@/content/site.config'
 import TypingText from './TypingText'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+
+// Add as many background photos as you like — one slide per entry.
+const HERO_IMAGES = [
+  { src: '/cover_image.png', alt: 'cover-1' },
+  { src: '/cover_image_2.png', alt: '' },
+  { src: '/cover_image_3.png', alt: '' },
+]
 
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-[720px] flex items-center">
-      {/* Full-bleed background photo */}
-      <Image
-        src="/cover_image.jpeg"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center -z-20"
-      />
+      {/* Full-bleed background carousel */}
+      <div className="absolute inset-0 -z-20">
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          loop={HERO_IMAGES.length > 1}
+          autoplay={
+            HERO_IMAGES.length > 1 ? { delay: 3500, disableOnInteraction: false } : false
+          }
+          allowTouchMove={false}
+          className="w-full h-full"
+        >
+          {HERO_IMAGES.map((img) => (
+            <SwiperSlide key={img.src}>
+              <div className="relative w-full h-full">
+                <Image src={img.src} alt={img.alt} fill priority className="object-cover object-center" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
       {/* Overlay: dark gradient for text contrast, brand-tinted at the edges */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-gray-950/90 via-gray-950/70 to-gray-950/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent" />
 
-      <div className="container-responsive relative py-16 sm:py-20 lg:py-28">
+      <div className="container-responsive relative py-16 sm:py-20 lg:py-28 lg:-ml-4 xl:-ml-10">
         <div className="max-w-2xl lg:max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-brand-yellow px-3 py-2 rounded-full text-xs sm:text-sm font-semibold text-gray-900 mb-5 sm:mb-6">
             <span className="w-2 h-2 bg-green-600 rounded-full" />
