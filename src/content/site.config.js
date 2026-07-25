@@ -7,7 +7,7 @@ const config = {
     about:
       'We maintain a network of distributors and partners across India to deliver premium building materials at wholesale rates with reliable service.',
     logo: '/logo.png',
-    heroImage: '/hero.jpg',
+    heroImage: '/hero.jpeg',
   },
   contacts: {
     address:
