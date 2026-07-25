@@ -1,41 +1,69 @@
 import Image from 'next/image'
 import config from '@/content/site.config'
+import TypingText from './TypingText'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-yellow-50 to-white">
-      <div className="container-responsive grid lg:grid-cols-2 gap-8 lg:gap-10 items-center py-8 sm:py-12 lg:py-20">
-        <div className="order-2 lg:order-1">
-          <div className="inline-flex items-center gap-2 bg-brand-yellow px-3 py-2 rounded-full text-xs sm:text-sm font-semibold text-gray-900 mb-4">
-            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+    <section className="relative isolate overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-[720px] flex items-center">
+      {/* Full-bleed background photo */}
+      <Image
+        src="/cover_image.jpeg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center -z-20"
+      />
+      {/* Overlay: dark gradient for text contrast, brand-tinted at the edges */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-gray-950/90 via-gray-950/70 to-gray-950/30" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent" />
+
+      <div className="container-responsive relative py-16 sm:py-20 lg:py-28">
+        <div className="max-w-2xl lg:max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-brand-yellow px-3 py-2 rounded-full text-xs sm:text-sm font-semibold text-gray-900 mb-5 sm:mb-6">
+            <span className="w-2 h-2 bg-green-600 rounded-full" />
             Authorized UltraTech Dealer
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900">
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-white [text-wrap:balance]">
             {config.company.name}
           </h1>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">{config.company.tagline}</p>
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="#contact" className="btn-primary text-center py-3 sm:py-3">
+
+          <TypingText
+            as="p"
+            text={config.company.tagline}
+            typingSpeed={28}
+            loop={false}
+            className="mt-4 sm:mt-5 text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl min-h-[4.5rem] sm:min-h-[3.5rem] lg:min-h-[4rem]"
+          />
+
+          <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="#contact" className="btn-primary text-center py-3 sm:py-3.5 text-sm sm:text-base">
               <span>📞</span>
               Call / WhatsApp
             </a>
-            <a href="#services" className="btn-secondary text-center py-3 sm:py-3">
-              <span>🔧</span>
-              View Services
+            <a
+              href="#services"
+              className="text-center py-3 sm:py-3.5 px-6 rounded-lg font-semibold text-sm sm:text-base bg-white/10 text-white border border-white/40 backdrop-blur-sm hover:bg-white/20 transition-colors"
+            >
+              <span>🔧</span> View Services
             </a>
           </div>
-          <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-50 rounded-xl border-l-4 border-brand-blue">
-            <p className="text-xs sm:text-sm text-gray-700 font-medium">{config.company.about}</p>
-          </div>
-        </div>
 
-        <div className="relative order-1 lg:order-2">
-          <div className="relative aspect-[4/3] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-            <Image src={config.company.heroImage || '/hero.jpg'} alt="SFPCC Construction Materials" fill className="object-cover" />
+          {/* Highlighted callout for the "about" line */}
+          <div className="mt-7 sm:mt-9 bg-white/10 backdrop-blur-sm border-l-4 border-brand-yellow rounded-lg p-4 sm:p-5 max-w-2xl">
+            <p className="text-sm sm:text-base text-gray-100 leading-relaxed font-medium">{config.company.about}</p>
           </div>
-          <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-white p-3 sm:p-4 rounded-xl shadow-lg border">
-            <div className="text-xl sm:text-2xl font-bold text-brand-blue">15+</div>
-            <div className="text-xs sm:text-sm text-gray-600">Trusted Partners</div>
+
+          {/* Stat cards */}
+          <div className="mt-5 sm:mt-6 flex flex-wrap gap-3 sm:gap-4">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 sm:px-6 sm:py-4">
+              <div className="text-2xl sm:text-3xl font-extrabold text-brand-yellow">15+</div>
+              <div className="text-xs sm:text-sm text-gray-200 mt-0.5">Trusted Partners</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3 sm:px-6 sm:py-4">
+              <div className="text-2xl sm:text-3xl font-extrabold text-brand-yellow">1 hr</div>
+              <div className="text-xs sm:text-sm text-gray-200 mt-0.5">Avg. Response Time</div>
+            </div>
           </div>
         </div>
       </div>
