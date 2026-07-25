@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import config from '@/content/site.config'
+import { Phone, Mail, MessageCircle, MapPin, Building2 } from 'lucide-react'
 
 // Leaflet touches `window`, so the map only ever renders client-side.
 const OfficesMap = dynamic(() => import('./OfficesMap'), {
@@ -88,7 +89,10 @@ export default function Contact() {
         {/* Head office + quick actions */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start mb-10 sm:mb-14">
           <div className="card p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1">Head Office</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 inline-flex items-center gap-2">
+              <Building2 className="w-5 h-5 text-brand-blue" strokeWidth={2} />
+              Head Office
+            </h3>
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-1">{config.contacts.address}</p>
             {config.contacts.gstin && (
               <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">GSTIN: {config.contacts.gstin}</p>
@@ -102,7 +106,7 @@ export default function Contact() {
                 >
                   <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 bg-brand-yellow rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-base sm:text-lg">📞</span>
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.25} />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="font-semibold text-gray-900 text-sm sm:text-base">{p.label}</div>
@@ -110,9 +114,10 @@ export default function Contact() {
                     </div>
                   </div>
                   <a
-                    className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 flex-shrink-0"
+                    className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 flex-shrink-0 inline-flex items-center gap-1.5"
                     href={`tel:${p.number.replace(/\s+/g, '')}`}
                   >
+                    <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.25} />
                     Call
                   </a>
                 </div>
@@ -120,11 +125,21 @@ export default function Contact() {
             </div>
 
             <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a className="btn-primary flex-1 text-center py-3" href={waLink} target="_blank" rel="noreferrer">
-                💬 WhatsApp
+              <a
+                className="btn-primary flex-1 text-center py-3 inline-flex items-center justify-center gap-2"
+                href={waLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.25} />
+                WhatsApp
               </a>
-              <a className="btn-secondary flex-1 text-center py-3" href={`mailto:${config.contacts.email}`}>
-                📧 Email
+              <a
+                className="btn-secondary flex-1 text-center py-3 inline-flex items-center justify-center gap-2"
+                href={`mailto:${config.contacts.email}`}
+              >
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.25} />
+                Email
               </a>
             </div>
           </div>
@@ -177,18 +192,23 @@ export default function Contact() {
                     <div className="text-sm text-gray-900 font-medium">{office.contactPerson}</div>
                   )}
                   {(office.phone || office.email) && (
-                    <div className="mt-2 flex flex-wrap gap-2 text-xs sm:text-sm">
+                    <div className="mt-2 flex flex-wrap gap-3 text-xs sm:text-sm">
                       {office.phone && (
                         <a
                           href={`tel:${office.phone.replace(/\s+/g, '')}`}
-                          className="text-brand-blue hover:underline"
+                          className="inline-flex items-center gap-1 text-brand-blue hover:underline"
                         >
-                          📞 {office.phone}
+                          <Phone className="w-3.5 h-3.5" strokeWidth={2.25} />
+                          {office.phone}
                         </a>
                       )}
                       {office.email && (
-                        <a href={`mailto:${office.email}`} className="text-brand-blue hover:underline break-all">
-                          📧 {office.email}
+                        <a
+                          href={`mailto:${office.email}`}
+                          className="inline-flex items-center gap-1 text-brand-blue hover:underline break-all"
+                        >
+                          <Mail className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={2.25} />
+                          {office.email}
                         </a>
                       )}
                     </div>
@@ -199,9 +219,11 @@ export default function Contact() {
           </div>
         )}
 
+
         {/* Full-width map with a pin for every office */}
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 text-center">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 text-center inline-flex items-center justify-center gap-2 w-full">
+            <MapPin className="w-5 h-5 text-brand-blue" strokeWidth={2} />
             Find Us — All Locations
           </h3>
           <OfficesMap markers={mapMarkers} />
