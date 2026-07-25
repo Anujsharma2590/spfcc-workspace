@@ -12,8 +12,9 @@ import 'swiper/css/effect-fade'
 // Add as many background photos as you like — one slide per entry.
 const HERO_IMAGES = [
   { src: '/cover_image.png', alt: 'cover-1' },
-  { src: '/cover_image_2.png', alt: '' },
-  { src: '/cover_image_3.png', alt: '' },
+  { src: '/cover_image_2.png', alt: 'cover-2' },
+  { src: '/cover_image_3.png', alt: 'cover-3' },
+  { src: '/cover_image_4.png', alt: 'cover-4' },
 ]
 
 export default function Hero() {
